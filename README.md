@@ -21,13 +21,9 @@ n interactive Gradio app (inside a Jupyter Notebook) to **compare ML algorithms*
 ## 🧠 Supported Algorithms
 
 ### Classification
-{", ".join(sorted(cls_keys + (['xgboost'] if 'xgboost' in code else [])))}
-
 ### Regression
-{", ".join(sorted(reg_keys + (['xgboost'] if 'xgboost' in code else [])))}
-
 ### Clustering
-{", ".join(sorted(clu_keys))}
+
 
 > *Note:* Some algorithm parameter availability may vary by scikit‑learn version.
 
