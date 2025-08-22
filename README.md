@@ -4,9 +4,9 @@ An interactive Gradio app (inside a Jupyter Notebook) to **compare ML algorithms
 
 > Notebook: `Comprehensive_ML_Algorithm_Comparator.ipynb`
 
----
 
-## ✨ Key Features
+
+## Key Features
 
 - **Three task types:** classification, regression, clustering.
 - **Plug in data quickly:** upload a CSV or generate synthetic data with adjustable samples/features.
@@ -17,9 +17,9 @@ An interactive Gradio app (inside a Jupyter Notebook) to **compare ML algorithms
 - **Caching & speed:** basic results caching and threaded evaluation for snappier comparisons.
 - **XGBoost support:** Includes optional XGBoost models for classification and regression (auto-detected if `xgboost` is installed).
 
----
 
-## 🧠 Supported Algorithms
+
+## Supported Algorithms
 
 ### Classification
 ada_boost, decision_tree, extra_trees, gaussian_process, gradient_boosting, knn, lda, linear_svm, logistic_regression, mlp, naive_bayes, qda, random_forest, sgd, svm, xgboost
@@ -32,9 +32,9 @@ agglomerative, birch, dbscan, kmeans, spectral
 
 > *Note:* Some algorithm parameter availability may vary by scikit‑learn version.
 
----
 
-## 📊 Metrics
+
+## Metrics
 
 ### Classification
 - Accuracy, Balanced Accuracy
@@ -55,9 +55,7 @@ agglomerative, birch, dbscan, kmeans, spectral
 - Silhouette, Calinski–Harabasz, Davies–Bouldin
 - *(If true labels provided in data)* Adjusted Rand, Normalized Mutual Info, Homogeneity, Completeness, V‑measure
 
----
-
-## 📦 Requirements
+## Requirements
 
 - Python 3.9+ (recommended)
 - `gradio`, `pandas`, `numpy`, `matplotlib`, `scikit-learn`
@@ -70,9 +68,8 @@ pip install gradio pandas numpy matplotlib scikit-learn
 pip install xgboost
 ```
 
----
 
-## ▶️ How to Run
+## ▶ How to Run
 
 ### Option A — In Jupyter
 1. Open `Comprehensive_ML_Algorithm_Comparator.ipynb` in Jupyter or VS Code.
@@ -85,9 +82,8 @@ python comparator.py
 ```
 Then open the printed local URL in your browser.
 
----
 
-## 📁 Data Format (CSV Uploads)
+## Data Format (CSV Uploads)
 
 - **For classification/regression:** last column = target `y`; all other columns = features `X`.
 - **For clustering:** all columns are treated as features `X` (no target).
@@ -96,9 +92,8 @@ Tips:
 - Ensure no mixed text/number columns unless you’ve encoded them beforehand.
 - The app applies a standard scaler; label encoding is used if needed for targets.
 
----
 
-## 🖱️ Using the App
+## 🖱 Using the App
 
 1. **Task Type:** choose *classification*, *regression*, or *clustering*.
 2. **Data:** check **Use Sample Data** (set samples & features), or upload a CSV.
@@ -107,9 +102,8 @@ Tips:
 5. Click **Compare** to compute metrics, view the comparison chart, and see the **Best Algorithm** suggestion.
 6. For tree-based models, inspect **Feature Importance** (top features per selected model).
 
----
 
-## ⚙️ Notes & Limitations
+## ⚙ Notes & Limitations
 
 - **Parallelism:** uses a thread pool (up to 4 workers) to evaluate models in parallel.
 - **Caching:** results cached per (task, data hash) to speed up repeated runs.
@@ -117,30 +111,3 @@ Tips:
 - **Version quirks:** certain estimators/params (e.g., `n_jobs` or feature importance attributes) can differ between scikit‑learn releases.
 - **Large data:** for very large CSVs, consider downsampling or increasing resources; training all models may be slow.
 - **Probabilities:** metrics like ROC AUC/Log Loss require `predict_proba`; not all classifiers provide it.
-
----
-
-## 📌 Troubleshooting
-
-- **“XGBoost not available” banner:** install with `pip install xgboost` and rerun.
-- **Errors on specific models:** check your scikit‑learn version; some parameters vary by release.
-- **Non‑numeric columns:** encode or drop before upload (or extend the notebook’s preprocessing).
-- **Imbalanced classes:** consider stratified splits and class‑weighted models (customize in code).
-
----
-
-## 🧩 File Structure
-
-- `Comprehensive_ML_Algorithm_Comparator.ipynb` — main app (Gradio UI + evaluation engine).
-
----
-
-## 📝 License
-
-Add your preferred license here (e.g., MIT).
-
----
-
-## 🙌 Acknowledgements
-
-Built with scikit‑learn, Gradio, NumPy, Pandas, Matplotlib, and optionally XGBoost.
