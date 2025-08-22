@@ -52,6 +52,15 @@ n interactive Gradio app (inside a Jupyter Notebook) to **compare ML algorithms*
 
 ---
 
+
+# How to Run
+Open Comprehensive_ML_Algorithm_Comparator.ipynb in Jupyter or VS Code.
+
+Run all cells. A Gradio UI will launch (or display inline if supported).
+
+
+
+
 ## 📦 Requirements
 
 - Python 3.9+ (recommended)
@@ -63,3 +72,5 @@ Install:
 pip install gradio pandas numpy matplotlib scikit-learn
 # optional
 pip install xgboost
+
+
